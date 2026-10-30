@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "version": "0.3.0",
+  "repository": "Sunba666/RVC-Tomorin",
+  "tag": "v0.3.0",
+  "folder": "VoiceWorkbench-0.3.0-Portable",
+  "archive": "VoiceWorkbench-0.3.0-Portable-Windows.zip",
+  "bytes": 5897222198,
+  "sha256": "6654b42e5c6afcf3e668baf9dd8e22cc10ce9b4d190cfc869df9e0490f314891",
+  "parts": [
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.001",
+      "bytes": 2000000000,
+      "sha256": "86d985560093326f4a7e144e58fb48de039ba2adf47a3fedcf74ea5bd63ea42a"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.002",
+      "bytes": 2000000000,
+      "sha256": "112ee1955b00969d58d0db77103ff2a5e6edf2f0b38d8383b48d04be2edac0c0"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.003",
+      "bytes": 1897222198,
+      "sha256": "87509f890a16d81d91d814b752d67002d9358ecaa7f709181fb4d33df7bf5662"
+    }
+  ]
+}

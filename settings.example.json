@@ -1,0 +1,14 @@
+{
+  "ffmpeg": "",
+  "rvc_root": "",
+  "python": "",
+  "model": "",
+  "index": "",
+  "separator_model": "",
+  "separator_config": "",
+  "cookies": "",
+  "output": "~/Music/VoiceWorkbench",
+  "pitch": 2,
+  "index_rate": 0.4,
+  "accompaniment": 0.35
+}
