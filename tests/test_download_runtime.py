@@ -27,7 +27,7 @@ class DownloadTests(TestCase):
                           for k in ('G', 'D') for s in ('32k', '40k', '48k')]
         self.create_archive()
 
-    def create_archive(self, unsafe=False):
+    def create_archive(self, unsafe=False, chunk_size=1500):
         with zipfile.ZipFile(self.archive, 'w') as z:
             for name in self.required: z.writestr('app/' + name, b'test foundation content')
             z.writestr('app/portable.json', json.dumps({'version': '0.3.0'}))
@@ -36,8 +36,8 @@ class DownloadTests(TestCase):
         self.info = {'folder': 'app', 'archive': 'runtime.zip', 'version': '0.3.0',
             'repository': 'owner/repo', 'tag': 'v0.3.0', 'bytes': len(data),
             'sha256': hashlib.sha256(data).hexdigest(), 'parts': [], 'min_space_bytes': 1}
-        for number, offset in enumerate(range(0, len(data), 1500)):
-            chunk = data[offset:offset+1500]
+        for number, offset in enumerate(range(0, len(data), chunk_size)):
+            chunk = data[offset:offset+chunk_size]
             name = 'runtime.zip.' + str(number+1).zfill(3)
             (self.adjacent/name).write_bytes(chunk)
             self.info['parts'].append({'name': name, 'bytes': len(chunk), 'sha256': hashlib.sha256(chunk).hexdigest()})
@@ -63,6 +63,13 @@ class DownloadTests(TestCase):
             with patch('download_runtime.shutil.disk_usage', side_effect=AssertionError('must not require fresh space')):
                 installer.install()
         self.assertEqual(personal.read_bytes(), b'personal')
+
+    def test_more_than_nine_parts_are_all_assembled_in_manifest_order(self):
+        self.create_archive(chunk_size=200)
+        self.assertGreater(len(self.info['parts']), 9)
+        self.archive.unlink()
+        installer=self.installer()
+        self.assertTrue(installer.install().is_file())
 
     def test_incomplete_existing_install_is_not_overwritten(self):
         installer = self.installer()

@@ -36,28 +36,33 @@ def main():
     parser.add_argument('--cache', type=Path)
     parser.add_argument('--offline-folder', type=Path)
     parser.add_argument('--headless', action='store_true')
+    parser.add_argument('--smoke-ui', action='store_true')
+    parser.add_argument('--report', type=Path)
     args = parser.parse_args()
     manifest = json.loads(args.manifest.read_text(encoding='utf-8-sig'))
     adjacent = args.offline_folder or (Path(sys.executable).parent if getattr(sys, 'frozen', False) else Path(__file__).resolve().parent)
     if args.headless:
         exe = RuntimeInstaller(manifest, args.destination, cache=args.cache, adjacent=adjacent,
             notify=lambda p, s: print(f'{p:.0f}% {s}', flush=True)).install()
+        if args.report:
+            args.report.write_text(json.dumps({'installed': str(exe), 'version': manifest['version']}, ensure_ascii=False), encoding='utf-8')
         print(str(exe)); return
     root = tk.Tk()
     root.title('RVC-Tomorin · 安装与启动')
-    root.geometry('540x245'); root.resizable(False, False); root.configure(bg='#f5f6f3')
+    root.geometry('560x320'); root.resizable(False, False); root.configure(bg='#f5f6f3')
     style = ttk.Style(root); style.theme_use('clam')
     style.configure('TFrame', background='#f5f6f3')
     style.configure('TLabel', background='#f5f6f3', foreground='#243b36', font=('Microsoft YaHei UI', 10))
     style.configure('TProgressbar', background='#367565', troughcolor='#e1e7e1')
     body = ttk.Frame(root, padding=24); body.pack(fill='both', expand=True)
+    footer = ttk.Frame(body); footer.pack(side='bottom', fill='x', pady=(10, 0))
+    button = ttk.Button(footer, text='取消'); button.pack(side='right')
     ttk.Label(body, text='RVC-Tomorin · 角色音频工坊', font=('Microsoft YaHei UI', 16, 'bold')).pack(anchor='w')
     ttk.Label(body, text='首次自动下载约 6 GB。环境会一起准备好，无需填写路径。', wraplength=490).pack(anchor='w', pady=(12, 16))
     progress = ttk.Progressbar(body, maximum=100); progress.pack(fill='x')
     message = tk.StringVar(value='正在检查软件…')
     ttk.Label(body, textvariable=message, wraplength=490).pack(anchor='w', pady=10)
     events = queue.Queue(); stop = threading.Event(); active = [False]
-    button = ttk.Button(body, text='取消'); button.pack(side='right')
     def close():
         if active[0]: stop.set(); message.set('正在取消，已下载内容可下次继续…')
         else: root.destroy()
@@ -89,12 +94,19 @@ def main():
                     subprocess.Popen([str(value)], cwd=value.parent)
                     root.destroy(); return
                 if kind == 'cancelled': root.destroy(); return
-                message.set(value); button.configure(text='重试', command=start)
+                message.set(value[:150]); button.configure(text='重试', command=start)
         except queue.Empty: pass
         if pending is not None:
             progress['value'], text = pending; message.set(text)
         root.after(100, poll)
-    root.after(150, start); root.after(100, poll); root.mainloop()
+    if args.smoke_ui:
+        if args.report:
+            args.report.write_text(json.dumps({'title': root.title(), 'version': manifest['version'],
+                'widgets': len(body.winfo_children())}, ensure_ascii=False), encoding='utf-8')
+        root.after(200, root.destroy)
+    else:
+        root.after(150, start); root.after(100, poll)
+    root.mainloop()
 
 
 if __name__ == '__main__':

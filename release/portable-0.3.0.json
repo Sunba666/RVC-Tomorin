@@ -10,18 +10,123 @@
   "parts": [
     {
       "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.001",
-      "bytes": 2000000000,
-      "sha256": "86d985560093326f4a7e144e58fb48de039ba2adf47a3fedcf74ea5bd63ea42a"
+      "bytes": 250000000,
+      "sha256": "0b92799391d86a3ac1143c5ead74c8f3e3e0bc7b760295ab5b72b8514c90ab84"
     },
     {
       "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.002",
-      "bytes": 2000000000,
-      "sha256": "112ee1955b00969d58d0db77103ff2a5e6edf2f0b38d8383b48d04be2edac0c0"
+      "bytes": 250000000,
+      "sha256": "d577d7f3d84fb738c24b0abd2685b33322f0f257d45ca6638e9302301ee2d211"
     },
     {
       "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.003",
-      "bytes": 1897222198,
-      "sha256": "87509f890a16d81d91d814b752d67002d9358ecaa7f709181fb4d33df7bf5662"
+      "bytes": 250000000,
+      "sha256": "996bb8c5796f2baef36faaec942c97936acb4bff0ba702472e56bca7a16824de"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.004",
+      "bytes": 250000000,
+      "sha256": "cf278984b3de0239283eda8e7640140ade92bfb6c5e94c7ddd3acd713043ba96"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.005",
+      "bytes": 250000000,
+      "sha256": "f816301671d757aa2f9806d1c3a918c7b37599f5a22b4f0dda564a9fec6447eb"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.006",
+      "bytes": 250000000,
+      "sha256": "bef9496192dbb824b763733a60dbd242b8741dfa7003ce9e31cdfea7d8002725"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.007",
+      "bytes": 250000000,
+      "sha256": "01d6fa131472d41ac43735cd2779eb4431ef4adf33f169fa85b79c128ea9ccd8"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.008",
+      "bytes": 250000000,
+      "sha256": "bb4b8c1364fbb998f5fd8d706c7966c17712fbf5a2c708f61bf111aaadb73220"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.009",
+      "bytes": 250000000,
+      "sha256": "405747c695e840945087b805e1c1f8f29791858c5464a4fd32c5be767a859cd9"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.010",
+      "bytes": 250000000,
+      "sha256": "b1bbbbe79f17ae9631549c239a1c0c73b99e4d789b1ace6907ada394a32e4352"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.011",
+      "bytes": 250000000,
+      "sha256": "db3b833307f03fbc522e65541add1d75115e12136401b14959a804e7a8ebec79"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.012",
+      "bytes": 250000000,
+      "sha256": "3f0d94ce45e7f87babe33c8cc58f448c31606237594cdca1b41c33f75dd0ca0e"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.013",
+      "bytes": 250000000,
+      "sha256": "bb02ce138c3cfc3456da3f47c9be8ee66d704be5e45820a289a242347f2350a3"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.014",
+      "bytes": 250000000,
+      "sha256": "e0e773fedab6d618115164044d9d56c4bc072864badf8d49adf8c625fd053f7c"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.015",
+      "bytes": 250000000,
+      "sha256": "7e9302cfc54f6cbb98e19d32a76789bbb3a368f5bd702d352ae0d12e6193e060"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.016",
+      "bytes": 250000000,
+      "sha256": "353fffeedd0a2eb6fcab5a1514233c4c10f859e94e9f4e38511d11e7a234d132"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.017",
+      "bytes": 250000000,
+      "sha256": "97426b84774d00feaae50b9e47cbcf8aecd47bf7adfddc986fa95f798df1962e"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.018",
+      "bytes": 250000000,
+      "sha256": "ac5185e9ec3ff4af0772bcf8b4969cac8b76748325d846e42738daaa96df13bb"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.019",
+      "bytes": 250000000,
+      "sha256": "a0c5af6b0da0369836195f4f48db0bfbe0112782920e163d9d4149578bee7658"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.020",
+      "bytes": 250000000,
+      "sha256": "c0785ae5bf50c28b8da634c461d463f62722f00f61a46c934544906a6f36f95b"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.021",
+      "bytes": 250000000,
+      "sha256": "b43b7b6ff9fff81a3affc86a51d2d19a631649653b090e09a5ab435c3ab5b47a"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.022",
+      "bytes": 250000000,
+      "sha256": "9888f626c5b0d68526ddf2e0e525d08316ea0c56a02dd3367c60eaeb95948168"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.023",
+      "bytes": 250000000,
+      "sha256": "5a297b788a44e08c68b1f309c040204a58d6bad0a120ce6e05a072884a6c89be"
+    },
+    {
+      "name": "VoiceWorkbench-0.3.0-Portable-Windows.zip.024",
+      "bytes": 147222198,
+      "sha256": "d0a5fb4cf9c54f906396253b8cdab3550a4d88dabb1667cf89df54285c660045"
     }
   ]
 }
